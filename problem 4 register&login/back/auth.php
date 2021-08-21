@@ -26,7 +26,7 @@ class auth implements authValidity
     }
     private function checkExist()
     {
-        /* search in data for if name and password is exist */
+        /* search in data for if name and password is exist and equal valuse send */
         $user = $this->conn->prepare('SELECT * FROM user WHERE email=? AND password=?');
         $user->execute([$this->email, $this->pass]);
         $user = $user->fetchObject();
